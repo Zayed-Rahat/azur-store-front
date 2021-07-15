@@ -18,7 +18,7 @@ const Home = () => {
       <NewArrivals />
 
       <h4 className="text-center text-primary p-3 mt-5 mb-5 display-4 jumbotron">
-        Best Sellers
+        Best 
       </h4>
       <BestSellers />
 
