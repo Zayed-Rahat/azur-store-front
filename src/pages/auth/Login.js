@@ -45,7 +45,7 @@ const Login = ({ history }) => {
     // console.table(email, password);
     try {
       const result = await auth.signInWithEmailAndPassword(email, password);
-      // console.log(result);
+      // //console.log(result);
       const { user } = result;
       const idTokenResult = await user.getIdTokenResult();
 
@@ -67,7 +67,7 @@ const Login = ({ history }) => {
 
       // history.push("/");
     } catch (error) {
-      console.log(error);
+      //console.log(error);
       toast.error(error.message);
       setLoading(false);
     }
@@ -97,7 +97,7 @@ const Login = ({ history }) => {
         // history.push("/");
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
         toast.error(err.message);
       });
   };

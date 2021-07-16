@@ -8,7 +8,7 @@ const FileUpload = ({ values, setValues, setLoading }) => {
   const { user } = useSelector((state) => ({ ...state }));
 
   const fileUploadAndResize = (e) => {
-    // console.log(e.target.files);
+    // //console.log(e.target.files);
     // resize
     let files = e.target.files; // 3
     let allUploadedFiles = values.images;
@@ -24,7 +24,7 @@ const FileUpload = ({ values, setValues, setLoading }) => {
           100,
           0,
           (uri) => {
-            // console.log(uri);
+            // //console.log(uri);
             axios
               .post(
                 `${process.env.REACT_APP_API}/uploadimages`,
@@ -36,7 +36,7 @@ const FileUpload = ({ values, setValues, setLoading }) => {
                 }
               )
               .then((res) => {
-                console.log("IMAGE UPLOAD RES DATA", res);
+                //console.log("IMAGE UPLOAD RES DATA", res);
                 setLoading(false);
                 allUploadedFiles.push(res.data);
 
@@ -44,7 +44,7 @@ const FileUpload = ({ values, setValues, setLoading }) => {
               })
               .catch((err) => {
                 setLoading(false);
-                console.log("CLOUDINARY UPLOAD ERR", err);
+                //console.log("CLOUDINARY UPLOAD ERR", err);
               });
           },
           "base64"
@@ -57,7 +57,7 @@ const FileUpload = ({ values, setValues, setLoading }) => {
 
   const handleImageRemove = (public_id) => {
     setLoading(true);
-    // console.log("remove image", public_id);
+    // //console.log("remove image", public_id);
     axios
       .post(
         `${process.env.REACT_APP_API}/removeimage`,
@@ -77,7 +77,7 @@ const FileUpload = ({ values, setValues, setLoading }) => {
         setValues({ ...values, images: filteredImages });
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
         setLoading(false);
       });
   };

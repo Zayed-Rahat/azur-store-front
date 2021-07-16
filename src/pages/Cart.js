@@ -15,24 +15,24 @@ const Cart = ({ history }) => {
   };
 
   const saveOrderToDb = () => {
-    // console.log("cart", JSON.stringify(cart, null, 4));
+    // //console.log("cart", JSON.stringify(cart, null, 4));
     userCart(cart, user.token)
       .then((res) => {
-        console.log("CART POST RES", res);
+        //console.log("CART POST RES", res);
         if (res.data.ok) history.push("/checkout");
       })
       .catch((err) => console.log("cart save err", err));
   };
 
   const saveCashOrderToDb = () => {
-    // console.log("cart", JSON.stringify(cart, null, 4));
+    // //console.log("cart", JSON.stringify(cart, null, 4));
     dispatch({
       type: "COD",
       payload: true,
     });
     userCart(cart, user.token)
       .then((res) => {
-        console.log("CART POST RES", res);
+        //console.log("CART POST RES", res);
         if (res.data.ok) history.push("/checkout");
       })
       .catch((err) => console.log("cart save err", err));

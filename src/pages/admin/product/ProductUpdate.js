@@ -43,7 +43,7 @@ const ProductUpdate = ({ match, history }) => {
 
   const loadProduct = () => {
     getProduct(slug).then((p) => {
-      // console.log("single product", p);
+      // //console.log("single product", p);
       // 1 load single proudct
       setValues({ ...values, ...p.data });
       // 2 load single product category subs
@@ -55,14 +55,14 @@ const ProductUpdate = ({ match, history }) => {
       p.data.subs.map((s) => {
         arr.push(s._id);
       });
-      console.log("ARR", arr);
+      //console.log("ARR", arr);
       setArrayOfSubs((prev) => arr); // required for ant design select to work
     });
   };
 
   const loadCategories = () =>
     getCategories().then((c) => {
-      console.log("GET CATEGORIES IN UPDATE PRODUCT", c.data);
+      //console.log("GET CATEGORIES IN UPDATE PRODUCT", c.data);
       setCategories(c.data);
     });
 
@@ -80,7 +80,7 @@ const ProductUpdate = ({ match, history }) => {
         history.push("/admin/products");
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
         setLoading(false);
         toast.error(err.response.data.err);
       });
@@ -88,22 +88,22 @@ const ProductUpdate = ({ match, history }) => {
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
-    // console.log(e.target.name, " ----- ", e.target.value);
+    // //console.log(e.target.name, " ----- ", e.target.value);
   };
 
   const handleCategoryChange = (e) => {
     e.preventDefault();
-    console.log("CLICKED CATEGORY", e.target.value);
+    //console.log("CLICKED CATEGORY", e.target.value);
     setValues({ ...values, subs: [] });
 
     setSelectedCategory(e.target.value);
 
     getCategorySubs(e.target.value).then((res) => {
-      console.log("SUB OPTIONS ON CATGORY CLICK", res);
+      //console.log("SUB OPTIONS ON CATGORY CLICK", res);
       setSubOptions(res.data);
     });
 
-    console.log("EXISTING CATEGORY values.category", values.category);
+    //console.log("EXISTING CATEGORY values.category", values.category);
 
     // if user clicks back to the original category
     // show its sub categories in default

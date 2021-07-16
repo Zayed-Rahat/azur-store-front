@@ -84,7 +84,7 @@ const Shop = () => {
 
   // 3. load products based on price range
   useEffect(() => {
-    console.log("ok to request");
+    //console.log("ok to request");
     fetchProducts({ price });
   }, [ok]);
 
@@ -138,7 +138,7 @@ const Shop = () => {
     setBrand("");
     setColor("");
     setShipping("");
-    // console.log(e.target.value);
+    // //console.log(e.target.value);
     let inTheState = [...categoryIds];
     let justChecked = e.target.value;
     let foundInTheState = inTheState.indexOf(justChecked); // index or -1
@@ -152,13 +152,13 @@ const Shop = () => {
     }
 
     setCategoryIds(inTheState);
-    // console.log(inTheState);
+    // //console.log(inTheState);
     fetchProducts({ category: inTheState });
   };
 
   // 5. show products by star rating
   const handleStarClick = (num) => {
-    // console.log(num);
+    // //console.log(num);
     dispatch({
       type: "SEARCH_QUERY",
       payload: { text: "" },
@@ -197,7 +197,7 @@ const Shop = () => {
     ));
 
   const handleSub = (sub) => {
-    // console.log("SUB", sub);
+    // //console.log("SUB", sub);
     setSub(sub);
     dispatch({
       type: "SEARCH_QUERY",

@@ -26,7 +26,7 @@ const Header = () => {
   let history = useHistory();
 
   const handleClick = (e) => {
-    // console.log(e.key);
+    // //console.log(e.key);
     setCurrent(e.key);
   };
 

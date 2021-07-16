@@ -14,7 +14,7 @@ const ProductCardInCheckout = ({ p }) => {
   let dispatch = useDispatch();
 
   const handleColorChange = (e) => {
-    console.log("color changed", e.target.value);
+    //console.log("color changed", e.target.value);
 
     let cart = [];
     if (typeof window !== "undefined") {
@@ -28,7 +28,7 @@ const ProductCardInCheckout = ({ p }) => {
         }
       });
 
-      //  console.log('cart udpate color', cart)
+      //  //console.log('cart udpate color', cart)
       localStorage.setItem("cart", JSON.stringify(cart));
       dispatch({
         type: "ADD_TO_CART",
@@ -38,7 +38,7 @@ const ProductCardInCheckout = ({ p }) => {
   };
 
   const handleQuantityChange = (e) => {
-    // console.log("available quantity", p.quantity);
+    // //console.log("available quantity", p.quantity);
     let count = e.target.value < 1 ? 1 : e.target.value;
 
     if (count > p.quantity) {
@@ -68,7 +68,7 @@ const ProductCardInCheckout = ({ p }) => {
   };
 
   const handleRemove = () => {
-    // console.log(p._id, "to remove");
+    // //console.log(p._id, "to remove");
     let cart = [];
 
     if (typeof window !== "undefined") {

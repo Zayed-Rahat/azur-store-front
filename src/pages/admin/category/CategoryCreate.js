@@ -30,18 +30,18 @@ const CategoryCreate = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(name);
+    // //console.log(name);
     setLoading(true);
     createCategory({ name }, user.token)
       .then((res) => {
-        // console.log(res)
+        // //console.log(res)
         setLoading(false);
         setName("");
         toast.success(`"${res.data.name}" is created`);
         loadCategories();
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
         setLoading(false);
         if (err.response.status === 400) toast.error(err.response.data);
       });
@@ -49,7 +49,7 @@ const CategoryCreate = () => {
 
   const handleRemove = async (slug) => {
     // let answer = window.confirm("Delete?");
-    // console.log(answer, slug);
+    // //console.log(answer, slug);
     if (window.confirm("Delete?")) {
       setLoading(true);
       removeCategory(slug, user.token)

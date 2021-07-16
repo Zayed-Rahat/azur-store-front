@@ -25,14 +25,14 @@ const AllProducts = () => {
       })
       .catch((err) => {
         setLoading(false);
-        console.log(err);
+        //console.log(err);
       });
   };
 
   const handleRemove = (slug) => {
     // let answer = window.confirm("Delete?");
     if (window.confirm("Delete?")) {
-      // console.log("send delete request", slug);
+      // //console.log("send delete request", slug);
       removeProduct(slug, user.token)
         .then((res) => {
           loadAllProducts();
@@ -40,7 +40,7 @@ const AllProducts = () => {
         })
         .catch((err) => {
           if (err.response.status === 400) toast.error(err.response.data);
-          console.log(err);
+          //console.log(err);
         });
     }
   };
